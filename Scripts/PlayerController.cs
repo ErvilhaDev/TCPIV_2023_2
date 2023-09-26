@@ -3,26 +3,31 @@ using System;
 
 public class PlayerController : KinematicBody2D
 {
-    [Export]
-    public int Speed { get; set; } = 400;
+    [Export] public int speed = 200;
 
-    private Vector2 _target;
+    public Vector2 target;
+    public Vector2 velocity = new Vector2();
+
+    public override void _Ready()
+    {
+        target = Position;
+    }
 
     public override void _Input(InputEvent @event)
     {
         if (@event.IsActionPressed("click"))
         {
-            _target = GetGlobalMousePosition();
+            target = GetGlobalMousePosition();
         }
     }
 
-    public override void _PhysicsProcess(double delta)
+    public override void _PhysicsProcess(float delta)
     {
-        Velocity = Position.DirectionTo(_target) * Speed;
+        velocity = Position.DirectionTo(target) * speed;
         // LookAt(target);
-        if (Position.DistanceTo(_target) > 10)
+        if (Position.DistanceTo(target) > 5)
         {
-            MoveAndSlide();
+            velocity = MoveAndSlide(velocity);
         }
     }
 }

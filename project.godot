@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="2023_02 - TCPIV"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/Stages/Scene_Default.tscn"
 config/icon="res://icon.png"
 
 [gui]
