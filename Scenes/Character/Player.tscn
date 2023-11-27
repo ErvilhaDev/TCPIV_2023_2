@@ -1,13 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Character/icon.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/PlayerController.cs" type="Script" id=2]
+[ext_resource path="res://scripts/PlayerController.cs" type="Script" id=2]
+[ext_resource path="res://scenes/Character/Player anim/icon_down.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Character/Player anim/icon_side.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Character/Player anim/icon_up.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.5, 25.5 )
+extents = Vector2( 78.5, 77.5 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "MovDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "MovLeft",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "MovUp",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "default",
@@ -18,8 +36,11 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, -0.5 )
+position = Vector2( -0.5, 0.5 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -2.38419e-07, 2.38419e-07 )
+scale = Vector2( 2.57813, 2.57813 )
 frames = SubResource( 2 )
+animation = "MovDown"

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mockup2.png-91ab35ec0181af653d48e665703db124.stex"
+path="res://.import/backpack.png-ca91fdba80310e184792d9b13d430d54.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Stages/Mockup2.png"
-dest_files=[ "res://.import/Mockup2.png-91ab35ec0181af653d48e665703db124.stex" ]
+source_file="res://assets/Inventory/backpack.png"
+dest_files=[ "res://.import/backpack.png-ca91fdba80310e184792d9b13d430d54.stex" ]
 
 [params]
 
