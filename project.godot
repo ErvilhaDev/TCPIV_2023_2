@@ -11,23 +11,8 @@ config_version=4
 [application]
 
 config/name="2023_02 - TCPIV"
-run/main_scene="res://Scenes/Stages/TestScene_Pedro.tscn"
+run/main_scene="res://Scenes/Stages/Scene_Default.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-InventoryManager="*res://Scripts/InventoryManager.cs"
-
-[display]
-
-window/size/width=960
-window/size/height=540
-window/size/resizable=false
-
-[global]
-
-build=false
-config=false
 
 [gui]
 
@@ -40,19 +25,6 @@ click={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
-event={
-"deadzone": 0.5,
-"events": [  ]
-}
-
-[layer_names]
-
-2d_render/layer_1="Player"
-2d_render/layer_2="Environment"
-2d_render/layer_3="Itens"
-2d_physics/layer_1="Player"
-2d_physics/layer_2="Environment"
-2d_physics/layer_3="Itens"
 
 [mono]
 
