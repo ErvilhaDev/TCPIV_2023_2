@@ -1,16 +1,16 @@
 using Godot;
 using System;
 
-public class PlayerController : KinematicBody2D
+public class PlayerControllerPedro : KinematicBody2D
 {
-	[Export] public int speed = 200;
+	[Export] public int speed = 3;
 	
 	public Vector2 target;
-	public Vector2 velocity = new Vector2();
+	public Vector2 motion = new Vector2();
 
 	public override void _Ready()
 	{
-		target = Position;
+			target = Position;
 	}
 
 	public override void _Input(InputEvent @event)
@@ -18,16 +18,22 @@ public class PlayerController : KinematicBody2D
 		if (@event.IsActionPressed("click"))
 		{
 			target = GetGlobalMousePosition();
+			GD.Print("Movendo para..." + target);
 		}
 	}
 
 	public override void _PhysicsProcess(float delta)
 	{
-		velocity = Position.DirectionTo(target) * speed;
+		motion = Position.DirectionTo(target) * speed * 100;
 		// LookAt(target);
 		if (Position.DistanceTo(target) > 5)
 		{
-			velocity = MoveAndSlide(velocity);
+			motion = MoveAndSlide(motion);
 		}
+	}
+	
+	public override void _Process(float delta)
+	{
+		
 	}
 }
