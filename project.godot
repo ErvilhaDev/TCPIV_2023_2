@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "DefaultItem",
+"language": "GDScript",
+"path": "res://Scenes/Items/ItemDefault.gd"
+} ]
+_global_script_class_icons={
+"DefaultItem": ""
+}
+
 [application]
 
 config/name="2023_02 - TCPIV"
@@ -20,9 +30,12 @@ InventoryManager="*res://Scripts/InventoryManager.cs"
 
 [display]
 
-window/size/width=960
-window/size/height=540
-window/size/resizable=false
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=960
+window/size/test_height=540
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [global]
 
@@ -50,9 +63,11 @@ event={
 2d_render/layer_1="Player"
 2d_render/layer_2="Environment"
 2d_render/layer_3="Itens"
+2d_render/layer_4="UI"
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Environment"
 2d_physics/layer_3="Itens"
+2d_physics/layer_4="UI"
 
 [mono]
 

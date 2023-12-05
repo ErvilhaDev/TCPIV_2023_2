@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_up.png-6921a3199f752813b1b83d253e209adf.stex"
+path="res://.import/icon_up.png-d41b63ff6984fa3fd8772adfef1f5c8f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Character/Player anim/icon_up.png"
-dest_files=[ "res://.import/icon_up.png-6921a3199f752813b1b83d253e209adf.stex" ]
+source_file="res://Scenes/Character/Player anim/icon_up.png"
+dest_files=[ "res://.import/icon_up.png-d41b63ff6984fa3fd8772adfef1f5c8f.stex" ]
 
 [params]
 

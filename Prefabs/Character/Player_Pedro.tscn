@@ -12,19 +12,18 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 27.0
-height = 24.0
+radius = 55.0
+height = 60.0
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-offset = Vector2( 0, -120 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -39 )
+position = Vector2( 0, 37 )
 shape = SubResource( 3 )
 __meta__ = {
 "_editor_description_": ""

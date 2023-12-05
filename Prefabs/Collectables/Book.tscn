@@ -4,10 +4,9 @@
 [ext_resource path="res://Scripts/Collectable.cs" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 17 )
+extents = Vector2( 37, 29 )
 
 [node name="Book" type="Node2D"]
-position = Vector2( 181, 338 )
 script = ExtResource( 2 )
 resource = ExtResource( 1 )
 itemSpritePath = NodePath("Sprite")
@@ -15,10 +14,10 @@ inventoryManagerPath = NodePath("../../InventoryManager")
 clickableAreaPath = NodePath("DetectableArea")
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
 z_index = -1
 
 [node name="DetectableArea" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectableArea"]
 shape = SubResource( 1 )

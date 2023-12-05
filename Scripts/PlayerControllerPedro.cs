@@ -4,25 +4,47 @@ using System;
 public class PlayerControllerPedro : KinematicBody2D
 {
 	[Export] public int speed = 3;
-	
 	public Vector2 target;
 	public Vector2 motion = new Vector2();
+	
+	[Export] NodePath inventoryPath;
+	InventoryVars inventory;
 
 	public override void _Ready()
 	{
-			target = Position;
+		inventory = GetNode(inventoryPath) as InventoryVars;
+		target = Position;
 	}
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event.IsActionPressed("click"))
+		if ( @event.IsActionPressed("click"))
 		{
 			target = GetGlobalMousePosition();
+			
 			GD.Print("Movendo para..." + target);
 		}
 	}
 
 	public override void _PhysicsProcess(float delta)
+	{
+		if(!inventory.uiClicked)
+		{
+			Move();
+		}
+		
+		if(inventory.uiClicked)
+		{
+			target = Position;
+		}
+	}
+	
+	public override void _Process(float delta)
+	{
+		
+	}
+	
+	private void Move()
 	{
 		motion = Position.DirectionTo(target) * speed * 100;
 		// LookAt(target);
@@ -30,10 +52,5 @@ public class PlayerControllerPedro : KinematicBody2D
 		{
 			motion = MoveAndSlide(motion);
 		}
-	}
-	
-	public override void _Process(float delta)
-	{
-		
 	}
 }

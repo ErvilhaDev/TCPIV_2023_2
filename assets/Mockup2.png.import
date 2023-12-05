@@ -2,24 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<<< HEAD:Prefabs/Character/icon.png.import
-path="res://.import/icon.png-e7c99166fd38f88616cbcb85892f6c92.stex"
-========
 path="res://.import/Mockup2.png-5f8eb90f7937c1586b8db0653bceb9f1.stex"
->>>>>>>> origin/Navmesh:assets/Mockup2.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Prefabs/Character/icon.png.import
-source_file="res://Prefabs/Character/icon.png"
-dest_files=[ "res://.import/icon.png-e7c99166fd38f88616cbcb85892f6c92.stex" ]
-========
 source_file="res://assets/Mockup2.png"
 dest_files=[ "res://.import/Mockup2.png-5f8eb90f7937c1586b8db0653bceb9f1.stex" ]
->>>>>>>> origin/Navmesh:assets/Mockup2.png.import
 
 [params]
 
