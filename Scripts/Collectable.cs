@@ -4,7 +4,7 @@ using System;
 [Tool] 
 public class Collectable : Node2D
 {
-	[Export] CollectableData resource;
+	[Export] public CollectableData resource;
 	Area2D clickableArea;
 	InventoryManager inventoryManager;
 	Sprite itemSprite;

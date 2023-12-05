@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/Inventory/backpack_UI.png" type="Texture" id=1]
 [ext_resource path="res://assets/Inventory/backpack_Slot.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://scripts/UI/BackpackBtn.cs" type="Script" id=4]
 [ext_resource path="res://scripts/UI/IventoryContainer.cs" type="Script" id=5]
 [ext_resource path="res://scripts/UI/Slot.cs" type="Script" id=6]
-[ext_resource path="res://assets/DefaultItem.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/InventoryVars.cs" type="Script" id=8]
 
 [sub_resource type="StyleBoxTexture" id=2]
@@ -18,6 +17,7 @@ region_rect = Rect2( 0, 0, 64, 64 )
 [node name="Inventory" type="Node2D"]
 script = ExtResource( 8 )
 buttonPath = NodePath("BackpackBtn")
+itemSlotPaths = [ NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot1"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot2"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot3"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot4"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot5"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot6"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot7"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot8"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot9"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot10"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot11"), NodePath("IventoryContainer/ScrollContainer/HBoxContainer/Slot12") ]
 
 [node name="IventoryContainer" type="TextureRect" parent="."]
 visible = false
@@ -41,21 +41,20 @@ margin_right = 562.0
 margin_bottom = 45.0
 custom_constants/separation = 2
 
-[node name="Slot" type="Panel" parent="IventoryContainer/ScrollContainer/HBoxContainer"]
+[node name="Slot1" type="Panel" parent="IventoryContainer/ScrollContainer/HBoxContainer"]
 margin_right = 45.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 custom_styles/panel = SubResource( 2 )
 script = ExtResource( 6 )
 
-[node name="Item" type="TextureRect" parent="IventoryContainer/ScrollContainer/HBoxContainer/Slot"]
+[node name="Item" type="TextureRect" parent="IventoryContainer/ScrollContainer/HBoxContainer/Slot1"]
 margin_left = 5.19907
 margin_top = 5.12256
 margin_right = 40.1991
 margin_bottom = 40.1226
 rect_min_size = Vector2( 35, 35 )
 rect_clip_content = true
-texture = ExtResource( 7 )
 expand = true
 
 [node name="Slot2" type="Panel" parent="IventoryContainer/ScrollContainer/HBoxContainer"]
