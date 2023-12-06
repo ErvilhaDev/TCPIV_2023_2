@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bagIconTemp.png-d4a3e08bf08abfa1d0148ae0ce799347.stex"
+path="res://.import/Walk_Up_01.png-29db0fd2f7337b73306d6263384b1be1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art2D/bagIconTemp.png"
-dest_files=[ "res://.import/bagIconTemp.png-d4a3e08bf08abfa1d0148ae0ce799347.stex" ]
+source_file="res://Art2D/Player/Walk Up/Walk_Up_01.png"
+dest_files=[ "res://.import/Walk_Up_01.png-29db0fd2f7337b73306d6263384b1be1.stex" ]
 
 [params]
 

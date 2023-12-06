@@ -5,9 +5,12 @@ using System.Collections.Generic;
 [Tool]
 public class InventoryManager : Node
 {
-	List<Collectable> itens;
+	public List<Collectable> itens;
 	[Export] NodePath inventoryPath;
 	InventoryVars inventory;
+	
+	String selectedItem = "none";
+	int selectedItemId;
 	
 	
 	// Called when the node enters the scene tree for the first time.
@@ -36,7 +39,7 @@ public class InventoryManager : Node
 		GD.Print("Item Adicionado: " + item.getName() + "id: " + id + " Tamanho da Lista: " + size );
 		
 		//adicionando imagem no Inventory Container
-		inventory.getItemSlot(id).PutInSlot(item.resource.itemImage);
+		inventory.getItemSlot(id).PutInSlot(item.resource.itemImage, item);
 	}
 	
 	public void removeItem(Collectable item)
@@ -50,7 +53,7 @@ public class InventoryManager : Node
 			for (int i = id; i < size - 1; i++)	
 			{
 				Collectable nextItem = itens[i + 1]; // Obter o próximo item na lista
-				inventory.getItemSlot(i).PutInSlot(nextItem.resource.itemImage);
+				inventory.getItemSlot(i).PutInSlot(nextItem.resource.itemImage, item);
 			}
 			// Limpando o último slot
 			inventory.getItemSlot(size - 1).PickFromSlot();
@@ -61,5 +64,28 @@ public class InventoryManager : Node
 			GD.Print("Item Removido: " + item.getName() + "id: " + id + " Tamanho da Lista: " + size);
 		}
 	}
-
+	
+	public String getSelected()
+	{
+		return selectedItem;
+	}
+	
+	public int getSelectedId()
+	{
+		return selectedItemId;
+	}
+	
+	public void setSelected(String _selectedItem)
+	{
+		this.selectedItem = _selectedItem;
+		
+		foreach(Collectable item in itens)
+		{
+			if(item.getName() == selectedItem)
+			{
+				this.selectedItemId = itens.IndexOf(item);
+			}
+		}
+		GD.Print(_selectedItem);
+	}
 }

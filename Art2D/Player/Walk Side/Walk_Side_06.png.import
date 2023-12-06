@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bookIconTemp.png-d149d52cb6d9430fff38360f55d1d8a1.stex"
+path="res://.import/Walk_Side_06.png-71e4523d345d47bd8479329a8dd51f72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art2D/bookIconTemp.png"
-dest_files=[ "res://.import/bookIconTemp.png-d149d52cb6d9430fff38360f55d1d8a1.stex" ]
+source_file="res://Art2D/Player/Walk Side/Walk_Side_06.png"
+dest_files=[ "res://.import/Walk_Side_06.png-71e4523d345d47bd8479329a8dd51f72.stex" ]
 
 [params]
 

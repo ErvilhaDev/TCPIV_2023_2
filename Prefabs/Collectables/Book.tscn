@@ -10,7 +10,7 @@ extents = Vector2( 46.5, 37 )
 script = ExtResource( 2 )
 resource = ExtResource( 1 )
 itemSpritePath = NodePath("Sprite")
-inventoryManagerPath = NodePath("../../InventoryManager")
+inventoryManagerPath = NodePath("../../../InventoryManager")
 clickableAreaPath = NodePath("DetectableArea")
 
 [node name="Sprite" type="Sprite" parent="."]

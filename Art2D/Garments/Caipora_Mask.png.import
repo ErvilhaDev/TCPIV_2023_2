@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cauldronTemp.png-5baa3a96219c444627f75053b72cc135.stex"
+path="res://.import/Caipora_Mask.png-f1ebd2015b65ff6cbd80d64e39193d42.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art2D/cauldronTemp.png"
-dest_files=[ "res://.import/cauldronTemp.png-5baa3a96219c444627f75053b72cc135.stex" ]
+source_file="res://Art2D/Garments/Caipora_Mask.png"
+dest_files=[ "res://.import/Caipora_Mask.png-f1ebd2015b65ff6cbd80d64e39193d42.stex" ]
 
 [params]
 

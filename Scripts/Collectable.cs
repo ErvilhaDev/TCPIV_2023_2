@@ -19,7 +19,7 @@ public class Collectable : Node2D
 		//assigning Nodes
 		itemSprite = GetNode(itemSpritePath) as Sprite;
 		
-		inventoryManagerPath = "../../InventoryManager";
+		inventoryManagerPath = "../../../InventoryManager";
 		inventoryManager = GetNode(inventoryManagerPath) as InventoryManager;
 		//InventoryManager inventoryManager = (InventoryManager)GetNode("/root/InventoryManager");
 		

@@ -4,5 +4,4 @@
 
 [node name="InventoryManager" type="Node"]
 script = ExtResource( 1 )
-inventoryPath = NodePath("")
-removableItemTempPath = NodePath("")
+inventoryPath = NodePath("../CanvasLayer/Inventory")

@@ -11,6 +11,9 @@ public class InventoryVars : Node2D
 	[Export] List<NodePath> itemSlotPaths;
 	List<Slot> itemSlot;
 	
+	[Export] NodePath inventoryManagerPath;
+	public InventoryManager inventoryManager;
+	
 	
 	public bool uiClicked;
 	
@@ -20,6 +23,8 @@ public class InventoryVars : Node2D
 		
 		button = GetNode(buttonPath) as BackpackBtn;
 		uiClicked = button.uiClicked;
+		
+		inventoryManager = GetNode(inventoryManagerPath) as InventoryManager;
 		
 		foreach(NodePath itemSlotPath in itemSlotPaths)
 		{
