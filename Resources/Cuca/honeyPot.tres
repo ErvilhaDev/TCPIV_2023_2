@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Art2D/Stages/Cuca/cucaPuzzle1/honeyPot.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/CollectableData.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+itemImage = ExtResource( 1 )
+itemName = "honeypot"

@@ -3,8 +3,8 @@ using System;
 
 public class BackpackBtn : Button
 {
-	private Texture openTexture = (Texture)GD.Load("res://assets/Inventory/backpack_open.png");
-	private Texture closedTexture = (Texture)GD.Load("res://assets/Inventory/backpack.png");
+	private Texture openTexture = (Texture)GD.Load("res://Art2D/UI/frogBag_Open.png");
+	private Texture closedTexture = (Texture)GD.Load("res://Art2D/UI/frogBag_Closed.png");
 	
 	public bool uiClicked = false;
 

@@ -18,7 +18,7 @@ public class Reward : Node
 		Reaction();
 	}
 	
-	public void SetReward(bool _bool)
+	public virtual void SetReward(bool _bool)
 	{
 		this.reward = _bool;
 	}

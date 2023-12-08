@@ -1,0 +1,127 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Art2D/Stages/Cuca/cucaPuzzle1_bg.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Cuca/honeyPot.tres" type="Resource" id=2]
+[ext_resource path="res://addons/folklorePlugin/pluginScenes/Puzzle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Inventory/Inventory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Inventory/InventoryManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/Character/Player_Pedro.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/Collectables/Collectable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Art2D/Stages/Cuca/cucaPuzzle1/c_c_Plate.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/UnlockableReward.cs" type="Script" id=9]
+[ext_resource path="res://Resources/Cuca/branchU.tres" type="Resource" id=10]
+[ext_resource path="res://Resources/Cuca/babyBlock.tres" type="Resource" id=11]
+[ext_resource path="res://Scripts/ChangeScene.cs" type="Script" id=12]
+[ext_resource path="res://Art2D/Ornaments/Rocks/ovniRock.png" type="Texture" id=13]
+[ext_resource path="res://Art2D/Ornaments/Rocks/rockFamily.png" type="Texture" id=14]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 117, 35 )
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 23.0
+height = 84.0
+
+[node name="Scene Pedro" type="Node"]
+
+[node name="InventoryManager" parent="." instance=ExtResource( 5 )]
+
+[node name="Scenario" type="StaticBody2D" parent="."]
+position = Vector2( 960, 540 )
+z_index = -1
+
+[node name="Mockup2" type="Sprite" parent="Scenario"]
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scenario"]
+polygon = PoolVector2Array( -271, -106, -391, -67, -610, -151, -688, -46, -694, 77, -778, 116, -616, 263, -619, 374, -541, 425, -514, 530, 487, 533, 573, 426, 675, 332, 666, 263, 717, 113, 828, 68, 756, -142, 526, -252, 373, -324, 136, -166, 4, -118, -33.8354, -268.992, -104, -549, 963, -543, 959, 614, -964, 620, -945, -549, -280, -550 )
+
+[node name="Door" type="StaticBody2D" parent="Scenario"]
+
+[node name="OvniRock2" type="Sprite" parent="Scenario/Door"]
+position = Vector2( -58, -297 )
+texture = ExtResource( 13 )
+
+[node name="OvniRock" type="Sprite" parent="Scenario/Door/OvniRock2"]
+position = Vector2( -188, 51 )
+texture = ExtResource( 13 )
+
+[node name="RockFamily" type="Sprite" parent="Scenario/Door/OvniRock2/OvniRock"]
+position = Vector2( 99, 34 )
+texture = ExtResource( 14 )
+
+[node name="DoorCollision" type="CollisionShape2D" parent="Scenario/Door"]
+position = Vector2( -156, -375 )
+shape = SubResource( 2 )
+
+[node name="SceneChanger" type="Area2D" parent="Scenario/Door"]
+
+[node name="ChangeSceneCollision" type="CollisionShape2D" parent="Scenario/Door/SceneChanger"]
+position = Vector2( -156, -375 )
+shape = SubResource( 2 )
+disabled = true
+script = ExtResource( 12 )
+stageName = "Cuca"
+sceneName = "cucaScene_02"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource( 4 )]
+inventoryManagerPath = NodePath("../../InventoryManager")
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="UnlockableReward" type="Node" parent="YSort"]
+script = ExtResource( 9 )
+doorCollisionPath = NodePath("../../Scenario/Door/DoorCollision")
+changeSceneCollisionPath = NodePath("../../Scenario/Door/SceneChanger/ChangeSceneCollision")
+imagePath = NodePath("../../Scenario/Door/OvniRock2")
+
+[node name="Itens" type="Node2D" parent="YSort"]
+
+[node name="babyblock" parent="YSort/Itens" instance=ExtResource( 7 )]
+position = Vector2( 557, 880 )
+resource = ExtResource( 11 )
+inventoryManagerPath = NodePath("../../../InventoryManager")
+
+[node name="Sprite" parent="YSort/Itens/babyblock" index="0"]
+scale = Vector2( 2, 2 )
+
+[node name="honeypot" parent="YSort/Itens" instance=ExtResource( 7 )]
+position = Vector2( 1392, 888 )
+resource = ExtResource( 2 )
+inventoryManagerPath = NodePath("../../../InventoryManager")
+
+[node name="branchU" parent="YSort/Itens" instance=ExtResource( 7 )]
+position = Vector2( 1392, 456 )
+resource = ExtResource( 10 )
+inventoryManagerPath = NodePath("../../../InventoryManager")
+
+[node name="Puzzle" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 558, 364 )
+inventoryManagerPath = NodePath("../../InventoryManager")
+wantedItemPaths = [ NodePath("../Itens/babyblock"), NodePath("../Itens/honeypot"), NodePath("../Itens/branchU") ]
+puzzleSteps = 3
+rewardNodePath = NodePath("../UnlockableReward")
+
+[node name="Sprite" parent="YSort/Puzzle" index="0"]
+texture = ExtResource( 8 )
+
+[node name="PhysicCollision(Shape2D)" parent="YSort/Puzzle" index="1"]
+visible = false
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="YSort/Puzzle/ClickArea" index="0"]
+position = Vector2( 3, -1 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 1027, 763 )
+speed = 5
+inventoryPath = NodePath("../../CanvasLayer/Inventory")
+
+[connection signal="body_entered" from="Scenario/Door/SceneChanger" to="Scenario/Door/SceneChanger/ChangeSceneCollision" method="_on_SceneChangeArea_body_entered"]
+
+[editable path="YSort/Itens/babyblock"]
+[editable path="YSort/Puzzle"]

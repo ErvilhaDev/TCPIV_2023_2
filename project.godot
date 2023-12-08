@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "Reference",
 "class": "DefaultItem",
 "language": "GDScript",
-"path": "res://Scenes/Items/ItemDefault.gd"
+"path": "res://Scenes_old/Items/ItemDefault.gd"
 } ]
 _global_script_class_icons={
 "DefaultItem": ""
@@ -21,8 +21,9 @@ _global_script_class_icons={
 [application]
 
 config/name="2023_02 - TCPIV"
-run/main_scene="res://Scenes/Stages/TestScene_Pedro.tscn"
+run/main_scene="res://Stages/Cuca/cucaScene_01.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [display]
 
